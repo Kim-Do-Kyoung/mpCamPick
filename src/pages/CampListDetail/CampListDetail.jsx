@@ -18,7 +18,7 @@ function CampListDetail(){
     },[state]);
 
     const campNav = [
-        {name:"캠핑장 소개",contents:<CampIntro data={props} />},
+        {name:"캠핑장 소개",contents:<CampIntro data={props} state={state} />},
         {name:"이용안내",contents:"test2"},
         {name:"위지/주변정보",contents:"test3"},
         {name:"캠핑&여행후기",contents:"test4"},

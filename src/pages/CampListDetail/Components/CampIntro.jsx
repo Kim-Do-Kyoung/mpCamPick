@@ -9,7 +9,13 @@ function CampIntro(props){
             {props.data.item?.map((data,index) =>(
               <img src={data.imageUrl} alt="이미지" key={index}/>
             ))}  
-          </Styled.CampIntroImg>    
+          </Styled.CampIntroImg>
+          <hr />
+          <div>
+            <p>
+              {props.state.intro}
+            </p>
+          </div>
         </div>      
       </>  
     )
