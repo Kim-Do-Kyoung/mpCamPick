@@ -5,7 +5,6 @@ import * as Styled from "./CampList.module"
 function CampList(){
     const {state} = useLocation();
     const MAX_LENGTH = 45;
-    console.log(state);
     const navigate = useNavigate();
 
     return(
@@ -52,8 +51,8 @@ function CampList(){
                     </div>
                     <div>
                       <ul>
-                          {data.sbrsCl.split(",").map((data2)=>(
-                            <li>
+                          {data.sbrsCl.split(",").map((data2,index)=>(
+                            <li key={index}>
                               {data2}
                             </li>
                             ))}

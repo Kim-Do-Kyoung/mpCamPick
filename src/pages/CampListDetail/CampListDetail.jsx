@@ -7,7 +7,6 @@ import axios from "axios";
 
 function CampListDetail(){
     const {state} = useLocation();
-    console.log(state);
     const [props,setProps] = useState("");
 
     useEffect(()=>{
@@ -80,7 +79,6 @@ function CampListDetail(){
                 </table>
               </Styled.CDLInfo>
             </Styled.CDLInfoWrap>
-            <hr />
             <Styled.CLDNav>
               {campNav.map((data,index)=>(
                 <nav key={index} onClick={()=>setSelectNav(index)} className={selectNav === index ? "focusmenu":"submenu"} >
@@ -88,6 +86,7 @@ function CampListDetail(){
                 </nav>
               ))}
             </Styled.CLDNav>
+            <hr />
             <div>
               {campNav[selectNav].contents}
             </div>
