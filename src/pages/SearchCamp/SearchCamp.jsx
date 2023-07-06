@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function SearchCamp(){
     const [keyWord,setKeyWord] = useState("");
     const [donm,setDonm] = useState("");
-    const [sigunguNm,setSigunguNm] = useState("가평");
+    const [sigunguNm,setSigunguNm] = useState("");
     const [thema,setThema] = useState("");
 
     const navigate = useNavigate();
@@ -35,13 +35,13 @@ function SearchCamp(){
             <table>
               <tbody>
                 <tr>
-                    <td>키워드 검색</td>
+                    <th>키워드 검색</th>
                     <td>
                       <input type="text" value={keyWord} onChange={e=>setKeyWord(e.target.value)} />
                     </td>
                 </tr>
                 <tr>
-                    <td>지역별검색</td>
+                    <th>지역별검색</th>
                     <td>
                       <select onChange={e => setDonm(e.target.value)} value={donm}>
                         {selectdonm.map((item) => (
@@ -62,7 +62,7 @@ function SearchCamp(){
                     </td>
                 </tr>
                 <tr>
-                    <td>테마별</td>
+                    <th>테마별</th>
                     <td>
                       <input type="text" value={thema} onChange={e => setThema(e.target.value)} />
                     </td>

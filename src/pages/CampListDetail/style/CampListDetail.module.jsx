@@ -69,48 +69,77 @@ export const CLDNav = styled.div`
     }
 `
 
+export const CampIntroWrap = styled.div`
+    margin: 0 auto;
+    width: 1200px;
+`
+
 
 export const CampIntroImg = styled.div`
   display: flex;
-  margin-top: 30px;
   justify-content: center;
   align-items: center;
 
   .slider {
     width: 1200px;
-    height: 300px;
   }
   .slick-prev::before,
   .slick-next::before {
     opacity: 0;
     display: none;
   }
-  .slider img {
-    width: 100%; /* Set the desired width */
-    height: 270px; /* Maintain aspect ratio */
-    margin-right: 10px;
-  }
-
-  .slide {
-  }
-
-  .prevBtn{
-    color: blakc;
+  img{
+    width: 98%;
+    height: 300px;
   }
 `;
 
-export const Pre = styled.div`
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  left: 3%;
-  z-index: 3;
-`;
+export const CampIntroIntro = styled.div`
+    margin: 0 auto;
 
-export const NextTo = styled.div`
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 3%;
-  z-index: 3;
-`;
+    & > p{
+        font-size: 14px;
+        font-family: 'S-CoreDream-3Light';
+        line-height: 1.5;
+        letter-spacing: 1.5px;
+    }
+`
+
+export const CampIntroInfo = styled.div`
+    & > h6{
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-family: 'yg-jalnan';
+    }
+
+    & > div{
+        width: 100%;
+        background-color: #eee;
+        display: flex;
+        align-items: center;
+    }
+
+    & > div > ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    & > div > ul > li{
+        display: flex;
+        padding: 30px;
+    }
+    & > div > ul > li > span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #5faf90;
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+    & > div > ul > li > p{
+        font-family: 'yg-jalnan';
+    }
+`

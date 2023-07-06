@@ -86,7 +86,7 @@ function CampListDetail(){
                 </nav>
               ))}
             </Styled.CLDNav>
-            <hr />
+            <hr style={{width:"1200px",border:"1px solid black",marginBottom:"20px"}} />
             <div>
               {campNav[selectNav].contents}
             </div>
