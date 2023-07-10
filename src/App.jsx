@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Main from "./Main/Main";
 import { Reset } from "styled-reset";
 import Login from "./pages/Login/Login";
@@ -10,7 +10,7 @@ function App() {
    return (
     <>
       <Reset />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Main /> } />
           <Route path="/login" element={ <Login /> } />
@@ -19,7 +19,7 @@ function App() {
           <Route path="/CampListDetail" element={ <CampListDetail /> } />
           <Route path="*" element={ <Main /> } />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

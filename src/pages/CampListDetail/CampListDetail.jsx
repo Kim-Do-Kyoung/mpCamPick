@@ -19,7 +19,7 @@ function CampListDetail(){
     const campNav = [
         {name:"캠핑장 소개",contents:<CampIntro data={props} state={state} />},
         {name:"이용안내",contents:"test2"},
-        {name:"위지/주변정보",contents:"test3"},
+        {name:"위치/주변정보",contents:"test3"},
         {name:"캠핑&여행후기",contents:"test4"},
         {name:"공지/이벤트",contents:"test5"}
     ];
@@ -28,7 +28,7 @@ function CampListDetail(){
     return(
         <>
           <Header />
-          <div>
+          <Styled.CDLWarp>
             <Styled.CDLName>
                 {state.facltNm}
             </Styled.CDLName>
@@ -90,7 +90,7 @@ function CampListDetail(){
             <div>
               {campNav[selectNav].contents}
             </div>
-          </div>
+          </Styled.CDLWarp>
         </>
     )
 }

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const CDLWarp = styled.div`
+
+`
+
 export const CDLName = styled.div`
     padding: 40px 80px;
     text-align: left;
@@ -12,7 +16,7 @@ export const CDLInfoWrap = styled.div`
     text-align: center;
 `
 export const CDLImage = styled.div`
-    margin-left: 80px;
+    margin-left: 100px;
     display: inline-flex;
     float: left;
 
