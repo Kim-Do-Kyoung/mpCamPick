@@ -15,11 +15,11 @@ export const CampListWrap = styled.div`
 
 export const CampListItems = styled.div`
     width: 1200px;
-    height: 300px;
+    height: 260px;
     display: inline-block;
     background-color: #eee;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     position: relative;
 `
 export const CampListImage = styled.div`
@@ -42,7 +42,7 @@ export const CampListInfo = styled.div`
     h3{
         font-size: 25px;
         font-family: 'yg-jalnan';
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
     h3:hover{
         text-decoration: underline;
@@ -88,20 +88,17 @@ export const Fac = styled.div`
     & > ul{
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         margin: 0;
         padding: 0;
     }
     & > ul > li{
         display: flex;
-        padding: 20px;
+        padding: 12px;
     }
     & > ul > li > span{
         display: flex;
-        align-items: center;
-        justify-content: center;
         color: #5faf90;
-        font-size: 20px;
+        font-size: 17px;
     }
 
     &  > ul > li > p{

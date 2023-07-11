@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as Styled from "./style/SearchCamp.module"
 
 function SearchCamp(){
     const [keyWord,setKeyWord] = useState("");
@@ -31,48 +32,50 @@ function SearchCamp(){
     }
     return(
         <>
-          <div>
-            <table>
-              <tbody>
-                <tr>
-                    <th>키워드 검색</th>
-                    <td>
-                      <input type="text" value={keyWord} onChange={e=>setKeyWord(e.target.value)} />
-                    </td>
-                </tr>
-                <tr>
-                    <th>지역별검색</th>
-                    <td>
-                      <select onChange={e => setDonm(e.target.value)} value={donm}>
-                        {selectdonm.map((item) => (
-                          <option value={item} key={item}>
-                            {item}
-                          </option>
-                        ))}
-                      </select>
-                    </td>
-                    <td>
-                    <select onChange={e => setSigunguNm(e.target.value)} value={sigunguNm}>
-                        {selectsigunguNm.map((item) => (
-                          <option value={item} key={item}>
-                            {item}
-                          </option>
-                        ))}
-                      </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th>테마별</th>
-                    <td>
-                      <input type="text" value={thema} onChange={e => setThema(e.target.value)} />
-                    </td>
-                    <td>
-                      <button onClick={()=> onSubmit()}>검색</button>
-                    </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>          
+          <Styled.SearchCampWrap>
+            <Styled.SearchCampSubmit>
+              <table>
+                <tbody>
+                  <tr>
+                      <th>키워드 검색</th>
+                      <td colSpan={2}>
+                        <input type="text" value={keyWord} onChange={e=>setKeyWord(e.target.value)} autoFocus />
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>지역별검색</th>
+                      <td style={{width:"170px"}}>
+                        <select onChange={e => setDonm(e.target.value)} value={donm}>
+                          {selectdonm.map((item) => (
+                            <option value={item} key={item}>
+                              {item}
+                            </option>
+                          ))}
+                        </select>
+                      </td>
+                      <td style={{width:"170px"}}>
+                      <select onChange={e => setSigunguNm(e.target.value)} value={sigunguNm}>
+                          {selectsigunguNm.map((item) => (
+                            <option value={item} key={item}>
+                              {item}
+                            </option>
+                          ))}
+                        </select>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>테마별</th>
+                      <td>
+                        <input type="text" value={thema} onChange={e => setThema(e.target.value)} />
+                      </td>
+                      <td>
+                        <button onClick={()=> onSubmit()}>검색</button>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+            </Styled.SearchCampSubmit>
+          </Styled.SearchCampWrap>          
         </>
     )
 }

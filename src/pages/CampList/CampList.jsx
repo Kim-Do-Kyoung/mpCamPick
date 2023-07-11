@@ -73,6 +73,9 @@ function CampList(){
                   </Styled.CampListInfo>
                 </Styled.CampListItems>
               ))}
+              <div>
+                페이징
+              </div>
           </Styled.CampListWrap>
           <Footer />
         </>
