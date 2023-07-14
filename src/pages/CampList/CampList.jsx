@@ -5,6 +5,7 @@ import Footer from "../../Main/Footer";
 import { faHouse, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CampFacility from "../../Component/CampFacility";
+import NoImg from "../../source/image/noimage.jpg"
 
 function CampList(){
     const {state} = useLocation();
@@ -21,7 +22,10 @@ function CampList(){
               {state.items.item?.map((data,index) =>(
                 <Styled.CampListItems key={index}>  
                   <Styled.CampListImage>
-                    <img src={data.firstImageUrl} alt="" onClick={()=>navigate("/CampListDetail",{state : data})} style={{cursor:"pointer"}} />
+                    {data.firstImageUrl === "" ? 
+                      <img src={NoImg} alt="No Img" onClick={()=>navigate("/CampListDetail",{state : data})} style={{cursor:"pointer"}} /> 
+                      : <img src={data.firstImageUrl} alt="" onClick={()=>navigate("/CampListDetail",{state : data})} style={{cursor:"pointer"}} />}
+                    
                   </Styled.CampListImage>
                   <Styled.CampListInfo>
                     <table>

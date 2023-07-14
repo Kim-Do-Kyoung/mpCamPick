@@ -9,7 +9,6 @@ import CampFacility from "../../../Component/CampFacility";
 import {Modal} from "antd"
 
 function CampIntro(props){
-
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [img,setImg] = useState("");
 
@@ -64,7 +63,8 @@ function CampIntro(props){
               {props.state.intro}
             </p>
           </Styled.CampIntroIntro>
-            <hr style={{width:"1200px",border:"1px solid black",marginTop:"20px",marginBottom:"20px"}} />
+            {props?.data === "" ? null
+            : <hr style={{width:"1200px",border:"1px solid black",marginTop:"20px",marginBottom:"20px"}} />}
           <Styled.CampIntroImg>
             <Slider {...settings}>
                 {props.data.item?.map((data,index) =>(

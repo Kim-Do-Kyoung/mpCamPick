@@ -15,11 +15,12 @@ export const CampListWrap = styled.div`
 
 export const CampListItems = styled.div`
     width: 1200px;
-    height: 260px;
+    height: 300px;
     display: inline-block;
     background-color: #eee;
     padding: 20px;
     margin-bottom: 30px;
+    margin-right:10px ;
     position: relative;
 `
 export const CampListImage = styled.div`

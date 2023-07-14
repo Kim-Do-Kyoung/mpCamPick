@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import CampIntro from "./Components/CampIntro";
 import * as Styled from "./style/CampListDetail.module"
 import axios from "axios";
+import NoImg from "../../source/image/noimage.jpg"
 
 function CampListDetail(){
     const {state} = useLocation();
@@ -34,7 +35,9 @@ function CampListDetail(){
             </Styled.CDLName>
             <Styled.CDLInfoWrap>
               <Styled.CDLImage>
-                <img src={state.firstImageUrl} alt="이미지"/>
+                {state?.firstImageUrl === "" ?
+                <img src={NoImg} alt="No Img" /> 
+                : <img src={state.firstImageUrl} alt="이미지"/>}
               </Styled.CDLImage>
               <Styled.CDLInfo>
                 <table>

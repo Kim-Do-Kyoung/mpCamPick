@@ -7,4 +7,5 @@ export const ContentsWrap = styled.div`
 `
 
 export const MainSearch = styled.div`
+    width: 100%;
 `
