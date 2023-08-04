@@ -5,6 +5,7 @@ import CampIntro from "./Components/CampIntro";
 import * as Styled from "./style/CampListDetail.module"
 import axios from "axios";
 import NoImg from "../../source/image/noimage.jpg"
+import CampIntro2 from "./Components/CampIntro2";
 
 function CampListDetail(){
     const {state} = useLocation();
@@ -19,7 +20,7 @@ function CampListDetail(){
 
     const campNav = [
         {name:"캠핑장 소개",contents:<CampIntro data={props} state={state} />},
-        {name:"이용안내",contents:"test2"},
+        {name:"이용안내",contents:<CampIntro2 />},
         {name:"위치/주변정보",contents:"test3"},
         {name:"캠핑&여행후기",contents:"test4"},
         {name:"공지/이벤트",contents:"test5"}
@@ -89,7 +90,6 @@ function CampListDetail(){
                 </nav>
               ))}
             </Styled.CLDNav>
-            <hr style={{width:"1200px",border:"1px solid black",marginBottom:"20px"}} />
             <div>
               {campNav[selectNav].contents}
             </div>

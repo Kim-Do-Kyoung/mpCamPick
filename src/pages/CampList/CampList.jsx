@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../Main/Header";
-import * as Styled from "./CampList.module"
+import * as Styled from "./style/CampList.module"
 import Footer from "../../Main/Footer";
 import { faHouse, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

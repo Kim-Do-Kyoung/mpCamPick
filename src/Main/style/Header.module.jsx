@@ -3,16 +3,20 @@ import styled from "styled-components";
 export const MainHeader = styled.div`
     width: 100%;
     height: 250px;
+    margin: 0 auto;
     background-color: #375959;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 150px;
+
 `
 
 export const LogoHeader = styled.div`
     display: flex;
-    width: 100%;
-    height: 150px;
     align-items: center;
     justify-content: center;
-    & > h6{
+    background-color: #375959;
+    & > h6 {
         height: 50px;
         font-size: 50px;
         color: white;
@@ -23,27 +27,31 @@ export const LogoHeader = styled.div`
 
 export const NavHeader = styled.div`
     text-align: center;
-    & > ul{
-
+    background-color: #375959;
+    & > ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
     }
-    & > ul > li{
-        display: inline-flex;
+    
+    & > ul > li {
         color: white;
         padding: 15px;
         font-size: 20px;
         font-family: 'GangwonEdu_OTFBoldA';
-    }
-
-    & > ul > li:hover{
-        color: black;
         cursor: pointer;
     }
 
-    .active{
+    & > ul > li:hover {
         color: black;
     }
 
-    .passive{
-        
+    .active {
+        color: black;
+    }
+
+    .passive {
+
     }
 `

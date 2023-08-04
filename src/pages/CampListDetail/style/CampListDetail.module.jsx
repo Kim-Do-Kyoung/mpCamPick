@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const CDLWarp = styled.div`
-
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
 `
 
 export const CDLName = styled.div`
@@ -9,33 +11,54 @@ export const CDLName = styled.div`
     text-align: left;
     font-size: 50px;
     font-family: 'yg-jalnan';
+    margin: 0 auto;
 
-`
-export const CDLInfoWrap = styled.div`
-    margin-bottom: 100px;
-    text-align: center;
-`
-export const CDLImage = styled.div`
-    margin-left: 100px;
-    display: inline-flex;
-    float: left;
-
-    & > img {
-        width: 600px;
+    @media (max-width: 1440px){
+        font-size: 30px;
     }
 `
+
+export const CDLInfoWrap = styled.div`
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+`
+
+export const CDLImage = styled.div`
+    display: inline-flex;
+    & > img {
+        width: 600px;
+        height: 420px;
+        margin-right: 30px;
+    }
+
+    @media (max-width: 1440px) {
+        display: block;
+        text-align: center;
+        
+
+        & > img {
+            width: 80%;
+            height: auto;
+            margin: 0;
+        }
+    }
+`
+
 export const CDLInfo = styled.div`
     display: inline-block;
+    width: 550px;
     &> table{
-        width: 600px;
+        width: 100%;
         height: 400px;
     }
 
-    &> table > tbody > tr > th,td{
+    &> table > tbody > tr > th, td {
         padding: 14px;
     }
     
-    &> table > tbody > tr > th{
+    &> table > tbody > tr > th {
         width: 130px;
         text-align: left;
         border-top: 1px solid red;
@@ -43,16 +66,29 @@ export const CDLInfo = styled.div`
         font-family: 'yg-jalnan';
         font-size: 13px;
     }
-    &> table > tbody > tr > td{
+    &> table > tbody > tr > td {
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
-        width: 350px;
         font-family: 'S-CoreDream-3Light';
         font-size: 15px;
     }
+
+    @media (max-width: 1440px) {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+
+        & > table{
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        td{
+            width: 250px;
+        }
+    }
 `
-
-
 
 export const CLDNav = styled.div`
     display: flex;
@@ -71,32 +107,49 @@ export const CLDNav = styled.div`
     .submenu{
 
     }
+
+    @media (max-width: 1440px){
+        & > nav{
+            padding: 5px 20px;
+            font-size: 12px;
+        }
+    }
 `
 
 export const CampIntroWrap = styled.div`
     margin: 0 auto;
     width: 1200px;
+
+    @media (max-width: 1440px){
+        width: 80%;
+    }
 `
 
-
 export const CampIntroImg = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
 
-  .slider {
-    width: 1200px;
-  }
-  .slick-prev::before,
-  .slick-next::before {
-    opacity: 0;
-    display: none;
-  }
-  img{
-    width: 98%;
-    height: 300px;
-  }
-`;
+    .slider {
+        width: 1200px;
+    }
+    .slick-prev::before,
+    .slick-next::before {
+        opacity: 0;
+        display: none;
+    }
+    img {
+        max-width: 100%;
+        height: 300px;
+    }
+
+    @media (max-width: 1440px){
+        .slider{
+            width: 300px;
+            margin: 0 auto;
+        }
+    }
+`
 
 export const CampIntroIntro = styled.div`
     margin: 0 auto;
@@ -110,6 +163,10 @@ export const CampIntroIntro = styled.div`
 `
 
 export const CampIntroInfo = styled.div`
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+
     & > h6{
         margin-bottom: 20px;
         font-size: 25px;

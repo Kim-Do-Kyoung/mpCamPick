@@ -2,6 +2,9 @@ const SigunguList = (e) => {
     let sigunguList = ["전체"];
   
     switch (e) {
+      case "전체" :
+        sigunguList = ["전체"];
+        return sigunguList;
       case "서울":
         sigunguList = [
           "전체",
