@@ -25,7 +25,7 @@ export const SearchCampSubmit = styled.div`
     background-color: rgba(255, 255, 255, 0.5);
     justify-items: center;
 
-    @media (max-width: 390px){
+    @media (max-width: 500px){
         width: 390px;
         position: static;
         height: auto;

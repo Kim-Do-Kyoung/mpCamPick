@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Modal} from "antd"
 
 export const CDLWarp = styled.div`
     display: grid;
@@ -139,7 +140,7 @@ export const CampIntroImg = styled.div`
         display: none;
     }
     img {
-        max-width: 100%;
+        max-width: 98%;
         height: 300px;
     }
 
@@ -203,4 +204,36 @@ export const CampIntroInfo = styled.div`
     & > div > ul > li > p{
         font-family: 'yg-jalnan';
     }
+
+    @media(max-width:1440px){
+        & > div > ul > li{
+            padding :20px;
+        }
+    }
+
 `
+export const ModalDiv = styled.div`
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    justify-content: center;
+
+    & > img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+`
+
+export const CustomModal = styled(Modal)`
+    .ant-modal-content {
+        padding: 0;
+        background-color: transparent;
+    }
+    .ant-modal-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+`;

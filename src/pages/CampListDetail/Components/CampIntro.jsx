@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import arrowLeft from "../../../source/image/angle-left-solid.svg"
 import arrowRight from "../../../source/image/angle-right-solid.svg"
 import CampFacility from "../../../Component/CampFacility";
-import {Modal} from "antd"
 
 function CampIntro(props){
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -96,16 +95,22 @@ function CampIntro(props){
                 ))}  
             </Slider>
           </Styled.CampIntroImg>
-          
-          <hr style={{width:"100%",border:"1px solid black",marginTop:"20px",marginBottom:"20px"}} />
-          <Modal title={null} open={isModalOpen} onCancel={()=>setIsModalOpen(false)} footer={null} width={800}>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src={img.imageUrl}  style={{width:"800px"}} alt="no img"/>
-            </div>
-          </Modal>
+          <Styled.CustomModal
+            title={null} 
+            open={isModalOpen} 
+            onCancel={()=>setIsModalOpen(false)} 
+            footer={null}
+            >
+
+            <Styled.ModalDiv>
+              <img src={img.imageUrl} alt="no img"/>
+            </Styled.ModalDiv>
+          </Styled.CustomModal>
         </Styled.CampIntroWrap>
+          
+        <hr style={{width:"100%",border:"1px solid black",marginTop:"20px",marginBottom:"20px"}} />
       </>  
     )
 }
 
-export default CampIntro
+export default CampIntro;

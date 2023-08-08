@@ -75,10 +75,10 @@ export const CampListInfo = styled.div`
         font-size: 25px;
         font-family: 'yg-jalnan';
         margin-bottom: 25px;
-    }
-    h3:hover {
-        text-decoration: underline;
-        text-shadow: 0.3px 0.3px;
+        :hover {
+            text-decoration: underline;
+            text-shadow: 0.3px 0.3px;
+        }
     }
     .lineIntro {
         font-family: 'S-CoreDream-3Light';
@@ -90,10 +90,11 @@ export const CampListInfo = styled.div`
         font-size: 15px;
         color: gray;
         margin-bottom: 10px;
-    }
-    .intro:hover {
-        text-decoration: underline;
-        text-shadow: 0.3px 0.3px;
+
+        :hover{
+            text-decoration: underline;
+            text-shadow: 0.3px 0.3px; 
+        }
     }
 `
 

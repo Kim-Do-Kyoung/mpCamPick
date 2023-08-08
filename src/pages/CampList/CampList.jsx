@@ -12,6 +12,7 @@ function CampList(){
     const MAX_LENGTH = 100;
     const navigate = useNavigate();
 
+    console.log(state);
     return(
         <>
           <Header />
