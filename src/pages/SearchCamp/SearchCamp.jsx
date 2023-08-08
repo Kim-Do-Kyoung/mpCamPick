@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Styled from "./style/SearchCamp.module"
@@ -9,27 +8,20 @@ import SigunguList from "../../Component/SigunguList";
 function SearchCamp(){
 
     const [keyWord,setKeyWord] = useState("");
-    const [donm,setDonm] = useState("");
-    const [sigunguNm,setSigunguNm] = useState("전체");
+    const [donm,setDonm] = useState("전체/도");
+    const [sigunguNm,setSigunguNm] = useState("");
     const [thema,setThema] = useState("");
 
-    const selectdonm = ["전체/도","서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기도", "강원도", "충청북도", "충청남도", "전라북도", "전라남도", "경상북도", "경상남도", "제주도"];
+    const selectdonm = ["전체/도","서울시", "부산시", "대구시", "인천시", "광주시", "대전시", "울산시", "세종시", "경기도", "강원도", "충청북도", "충청남도", "전라북도", "전라남도", "경상북도", "경상남도", "제주도"];
     const [selectSigungu,setSelectSigungu] = useState([]);
     const navigate = useNavigate();
     const onSubmit = () =>{
-      if(keyWord === ""){
-        axios.get(`https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=9&pageNo=1&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json`)
-        .then(res =>{
-          navigate('/CampList',
-             {state: res.data.response.body})
-        })
-      }else{
-        axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?numOfRows=9&pageNo=1&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json&keyword=${keyWord}`)
-        .then(res =>{
-            navigate('/CampList',
-             {state: res.data.response.body})
-        })
-      }
+      navigate("/Camplist",
+        {state :{
+          keyWord : keyWord,
+          donm : donm,
+          sigunguNm: sigunguNm
+        }})
     }
     const handleDonm = (e) => {
       setDonm(e.target.value);

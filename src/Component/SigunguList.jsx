@@ -5,7 +5,7 @@ const SigunguList = (e) => {
       case "전체" :
         sigunguList = ["전체"];
         return sigunguList;
-      case "서울":
+      case "서울시":
         sigunguList = [
           "전체",
           "중구",
@@ -35,7 +35,7 @@ const SigunguList = (e) => {
           "중랑구",
         ];
         return sigunguList;
-      case "부산":
+      case "부산시":
         sigunguList = [
           "전체",
           "중구",
@@ -56,7 +56,7 @@ const SigunguList = (e) => {
           "기장군",
         ];
         return sigunguList;
-      case "대구":
+      case "대구시":
         sigunguList = [
           "전체",
           "중구",
@@ -72,7 +72,7 @@ const SigunguList = (e) => {
       case "광주":
         sigunguList = ["전체", "동구", "서구", "남구", "북구", "광산구"];
         return sigunguList;
-      case "인천":
+      case "인천시":
         sigunguList = [
           "전체",
           "중구",
@@ -130,7 +130,7 @@ const SigunguList = (e) => {
           "연천군",
           "가평군",
           "양평군",
-        ];
+        ]
         return sigunguList;
       // 나머지 도시에 대한 구 목록 추가하기
       case "강원도":

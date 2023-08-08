@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
 
 export const CampListWrap = styled.div`
     width: 100%;
@@ -137,3 +138,26 @@ export const Fac = styled.div`
         font-family: 'yg-jalnan';
     }
 `
+
+
+
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+export const LoadingMessage = styled.div`
+    font-size: 30px;
+    margin: 30px;
+    font-family: 'yg-jalnan';
+`;
+
+export const LoadingSpinner = styled.div`
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #767676;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: ${spin} 1s linear infinite;
+    margin: 0 auto;
+`;
