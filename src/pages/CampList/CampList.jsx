@@ -9,6 +9,7 @@ import NoImg from "../../source/image/noimage.jpg"
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import Pagination from "react-js-pagination";
 
 function CampList() {
   const { state } = useLocation();
@@ -31,7 +32,7 @@ function CampList() {
 
     if (keyWord === "") {
       if (donm === "전체/도") { /* 전체 검색일때 */
-        axios.get(`https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=300&pageNo=${page}&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json`)
+        axios.get(`https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=10&pageNo=${page}&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json`)
           .then(res => {
             console.log(res);
             setCampData(res.data.response.body.items.item);
@@ -44,7 +45,7 @@ function CampList() {
             setIsLoading(false);
           });
       } else { /* 시 선택 시 */
-        axios.get(`https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=300&pageNo=${page}&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json`)
+        axios.get(`https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=3648&pageNo=${page}&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json`)
           .then(res => {
             let res2 = [];
 
@@ -65,7 +66,7 @@ function CampList() {
           });
       }
     } else {
-      axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?numOfRows=300&pageNo=${page}&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json&keyword=${keyWord}`)
+      axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?numOfRows=3648&pageNo=${page}&MobileOS=etc&MobileApp=app&serviceKey=Z%2BgWArWZD50zyi3NvL6uXYpXwO5i%2FC2covIbLqCRvB7Ovz3pdMwSiDYnxbkE9R9v8VCaHg9Q5MwUG4WzyZMA9Q%3D%3D&_type=json&keyword=${keyWord}`)
         .then(res => {
           setCampData(res.data.response.body.items.item);
           setTotalCount(res.data.response.body.totalCount);
@@ -126,7 +127,7 @@ function CampList() {
                   </table>
                 <Styled.InfoAddr>
                   <ul>
-                    {data.addr1 ==="" ? null : <li>
+                    {data.addr1 === "" ? null : <li>
                       <FontAwesomeIcon icon={faHouse} />
                       {data.addr1}
                     </li>}
@@ -150,9 +151,17 @@ function CampList() {
               </Styled.CampListInfo>
             </Styled.CampListItems>
             ))}
-            <div>
-              페이징
-            </div>
+            <Styled.PaginationWrapper>
+              <Pagination
+                activePage={page} // 현재 페이지
+                itemsCountPerPage={10} // 한 페이지랑 보여줄 아이템 갯수
+                totalItemsCount={totalCount} // 총 아이템 갯수
+                pageRangeDisplayed={10} // paginator의 페이지 범위
+                prevPageText={"‹"} // "이전"을 나타낼 텍스트
+                nextPageText={"›"} // "다음"을 나타낼 텍스트
+                onChange={(page)=>setPage(page)} // 페이지 변경을 핸들링하는 함수
+              />
+            </Styled.PaginationWrapper>
           </>
         )}
         

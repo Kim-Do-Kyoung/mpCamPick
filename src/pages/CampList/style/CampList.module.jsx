@@ -161,3 +161,53 @@ export const LoadingSpinner = styled.div`
     animation: ${spin} 1s linear infinite;
     margin: 0 auto;
 `;
+
+export const PaginationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 70px;
+
+  li {
+    padding: 10px 10px;
+
+    & > a {
+      color: black;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    &.active {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      color: red;
+    }
+
+    &.disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  .paginationItem {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .paginationActiveItem {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+
+  .paginationDisabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+`;
